@@ -1,5 +1,6 @@
  const { validationResult } = require('express-validator')
  const bcrypt = require('bcryptjs')
+ const jwt = require('jsonwebtoken')
 
  const User = require('../models/user')
  
@@ -13,11 +14,12 @@
      }
       const email = req.body.email
       const password = req.body.password
-      bcrypt.hash(password, 12)
+      bcrypt
+      .hash(password, 12)
       .then( hashedPassword => {
         const user = new User({
             email: email,
-            password: password
+            password: hashedPassword
         })
         return user.save()
       })
