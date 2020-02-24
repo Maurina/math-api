@@ -59,7 +59,7 @@ app.use((error, req, res, next) => {
     res.status(status).json({ message: message, data: data })
 })
 
-mongoose.connect('mongodb+srv://maurina:k9DlcNK4TSlGgn3b@cluster0-wk7lo.mongodb.net/user?retryWrites=true&w=majority'
+mongoose.connect('mongodb+srv://FLC:1td29W3fP2SQP4iC@cluster0-74x5c.mongodb.net/test?retryWrites=true&w=majority'
 ).then(result => {
     app.listen(8000)
 })
