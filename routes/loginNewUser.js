@@ -26,6 +26,6 @@ router.post('/', [
 
 router.get('/', loginNewUserController.getUser)
 
-/* router.get('/', loginNewUserController.loginCheck) */
+router.get('/', loginNewUserController.loginCheck) 
 
 module.exports = router
